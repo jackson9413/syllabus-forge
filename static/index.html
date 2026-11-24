@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Syllabus Forge - course design and syllabus readiness</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="logo">&#9670;</span>
+    <div>
+      <h1>Syllabus Forge</h1>
+      <p class="tag">Course design &amp; syllabus readiness review. Local-first, no API keys.</p>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <span id="status" class="status">idle</span>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="panel editor">
+    <h2>Course brief</h2>
+    <p class="hint">Paste a course brief. Sections in square brackets: <code>[Course]</code>,
+      <code>[Objectives]</code>, <code>[Topics]</code>, <code>[Assessments]</code>,
+      <code>[Policies]</code>.</p>
+
+    <label class="field">
+      <span>Sample</span>
+      <select id="sampleSelect"><option value="">- none -</option></select>
+    </label>
+
+    <label class="field">
+      <span>Review profile</span>
+      <select id="profileSelect"></select>
+    </label>
+
+    <textarea id="brief" spellcheck="false" placeholder="[Course]&#10;Course: Introduction to Data Science&#10;Credits: 4&#10;Weeks: 15&#10;&#10;[Objectives]&#10;- Implement and evaluate supervised learning | topics: 3-9 | assessed: Lab project&#10;&#10;[Topics]&#10;Week 1 | Orientation | obj 1&#10;&#10;[Assessments]&#10;Homework | 14 | 30% | weeks 1-14&#10;Midterm | 1 | 20% | week 8&#10;&#10;[Policies]&#10;Grading scale: A 93-100, B 90-92"></textarea>
+
+    <div class="actions">
+      <button id="analyzeBtn" class="primary">Review brief</button>
+      <button id="saveBtn">Save run</button>
+      <button id="mdBtn">Export MD</button>
+      <button id="csvBtn">Export CSV</button>
+      <button id="jsonBtn">Export JSON</button>
+    </div>
+
+    <details class="runs">
+      <summary>Saved runs (<span id="runCount">0</span>)</summary>
+      <div id="runList" class="run-list"></div>
+    </details>
+  </section>
+
+  <section class="panel results">
+    <div id="results">
+      <div class="empty">
+        <h3>No review yet</h3>
+        <p>Load a sample or paste a brief, then hit <em>Review brief</em>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
